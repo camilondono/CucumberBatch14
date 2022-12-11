@@ -21,3 +21,15 @@ Feature: Login functionality
     Then error message displayed
 
 
+  @tc1105
+  Scenario Outline: Invalid login functionality
+    When user enters different "<username>" and "<password>" and verify the "<error>" for it
+    Examples:
+      | username | password | error |
+      |admin     |cristiano |Invalid credentials|
+      |ronaldo   |Hum@nhrm123|Invalid credentials|
+      |          |Hum@nhrm123|Username cannot be empty|
+      |admin     |           |Password cannot be empty|
+
+
+

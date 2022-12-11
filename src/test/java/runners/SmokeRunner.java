@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
         glue = "steps",
         //when you set dryRun to true, it stops actual execution
         //it will quickly scan all the gherkin steps whether they are implemented ot not
-        dryRun = true,
+        dryRun = false,
         // when we set dry run to false, it starts execution again
-        tags = "@outline",
+        tags = "@excel",
 
         // to remove irrelevant information from console, you need to set monocrome to true
         monochrome = true,
