@@ -19,7 +19,9 @@ import org.junit.runner.RunWith;
         monochrome = true,
         // pretty keyword prints the steps in the console to increase readability
         //to generate the reports we need plugin of runner class
-        plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json"}
+        plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json",
+                // this failed.txt file holds all the scenarios are failed during execution
+                "rerun:target/failed.txt"}
 
 
 )
