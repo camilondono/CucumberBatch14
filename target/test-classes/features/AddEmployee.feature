@@ -42,3 +42,12 @@ Feature: Add Employee
   @excel
   Scenario: Adding multiple employees using excel file
     When user adds multiple employee from excel using "EmployeeData" and verify it
+
+
+  @db @regression
+  Scenario: Adding employee and verifying it is store in data base
+    And user enter "Mark" and "Anthony"
+    And user captures employee id
+    And admin user clicks on save button
+    Then employee added successfully
+    And added employee is displayed in database

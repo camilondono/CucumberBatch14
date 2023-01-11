@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         //it will quickly scan all the gherkin steps whether they are implemented ot not
         dryRun = false,
         // when we set dry run to false, it starts execution again
-        tags = "@tc1101",
+        tags = "@db",
 
         // to remove irrelevant information from console, you need to set monocrome to true
         monochrome = true,
