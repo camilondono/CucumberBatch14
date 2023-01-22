@@ -8,12 +8,12 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         // features we use to provide the path of all the features files
         features = "src/test/resources/features/",
-        glue = "steps",
+        glue = "APISteps",
         //when you set dryRun to true, it stops actual execution
         //it will quickly scan all the gherkin steps whether they are implemented ot not
-        dryRun = true,
+        dryRun = false,
         // when we set dry run to false, it starts execution again
-        tags = "@api",
+        tags = "@apidynamic",
 
         // to remove irrelevant information from console, you need to set monocrome to true
         monochrome = true,
@@ -27,6 +27,5 @@ import org.junit.runner.RunWith;
 )
 
 
-public class SmokeRunner {
-
+public class APIRunner {
 }
