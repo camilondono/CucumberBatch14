@@ -1,5 +1,6 @@
 package utils;
 
+import APISteps.APIWorkFlowSteps;
 import org.json.JSONObject;
 
 public class APIPayloadConstant {
@@ -52,6 +53,21 @@ public class APIPayloadConstant {
                         "  \"password\": \"Test@123\"\n" +
                         "}";
         return adminPayload;
+    }
+
+    public static String updateEmployeePayloadDynamic(String empId, String firstname, String lastname, String middlename,
+                                                      String gender, String dob,
+                                                      String empStatus, String jobTitle){
+        JSONObject obj = new JSONObject();
+        obj.put("employee_id", APIWorkFlowSteps.employee_id);
+        obj.put("emp_firstname", firstname);
+        obj.put("emp_lastname", lastname);
+        obj.put("emp_middle_name", middlename);
+        obj.put("emp_gender", gender);
+        obj.put("emp_birthday", dob);
+        obj.put("emp_status", empStatus);
+        obj.put("emp_job_title",jobTitle);
+        return obj.toString();
     }
 
 

@@ -71,6 +71,27 @@ public class APIexamplesReview2 {
 
         }
     }
+    @Test
+    public void getJobTitleCount(){
+
+        RequestSpecification request = given().headers
+                ("Content-Type", "application/json").headers("Authorization", token);
+
+        Response resp = request.when().get("/jobTitle.php");
+
+        String respo = resp.jsonPath().getString("Jobs.job");
+        System.out.println(respo);
+
+        String [] jobs = respo.split(",");
+        int count = 0;
+        for (int i = 0; i< jobs.length; i++){
+            count +=1;
+        }
+        System.out.println(count);
+
+
+    }
+
 
 }
 

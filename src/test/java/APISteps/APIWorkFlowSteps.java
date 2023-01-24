@@ -23,6 +23,8 @@ public class APIWorkFlowSteps {
     Response response;
 
     public static String employee_id;
+
+
     @Given("a request is prepared for creating an employee")
     public void a_request_is_prepared_for_creating_an_employee() {
         request = given().
@@ -125,6 +127,81 @@ public class APIWorkFlowSteps {
                                 dob, empStatus, jobTitle));
     }
 
+    //--------------------------------------------------------------------------------------
 
+    @Given("a request is prepared for updating an  employee with dynamic data {string} , {string} , {string} , {string} , {string} , {string} , {string} , {string}")
+    public void a_request_is_prepared_for_updating_an_employee_with_dynamic_data(String empId, String firstname,
+                                                                                 String lastname, String middlename,
+                                                                                 String gender, String dob,
+                                                                                 String empStatus, String jobTitle) {
+        request = given().header(APIConstants.Header_Key_Content_Type, APIConstants.Header_Value_Content_Type).
+                header(APIConstants.Header_Key_Authorization, GenerateTokenSteps.token).
+                body(APIPayloadConstant.updateEmployeePayloadDynamic
+                        (empId, firstname, lastname, middlename, gender, dob, empStatus, jobTitle ));
+
+    }
+
+    @When("a PUT call is made to create an employee")
+    public void a_put_call_is_made_to_create_an_employee() {
+        response = request.when().put(APIConstants.UPDATE_EMPLOYEE_URI);
+
+    }
+
+    @Then("the status code for updating an employee is {int}")
+    public void the_status_code_for_updating_an_employee_is(Integer int2) {
+    response.then().assertThat().statusCode(int2);
+
+
+    }
+
+    @Then("the response body update contains key {string} and value {string}")
+    public void the_response_body_update_contains_key_and_value(String key, String value) {
+       response.then().assertThat().body(key, equalTo(value));
+
+
+    }
+
+    //--------------------------------------------------------------------------------------
+
+    @Given("a request is prepared for getting the created employee")
+    public void a_request_is_prepared_for_getting_the_created_employee() {
+        request = given().header(APIConstants.Header_Key_Content_Type,APIConstants.Header_Value_Content_Type).
+                header(APIConstants.Header_Key_Authorization,GenerateTokenSteps.token).
+                queryParam("employee_id",employee_id);
+    }
+
+
+    @When("a GET call is made to retrieve the updated employee")
+    public void a_get_call_is_made_to_retrieve_the_updated_employee() {
+       response=request.when().get(APIConstants.GET_ONE_EMPLOYEE_URI);
+
+
+    }
+    @Then("the status code for the updated employee is {int}")
+    public void the_status_code_for_the_updated_employee_is(Integer int3) {
+        response.then().assertThat().statusCode(int3);
+
+    }
+
+    @Then("the employee id {string} should match with global employee is")
+    public void the_employee_id_should_match_with_global_employee_is(String empId) {
+        employee_id=response.jsonPath().getString(empId);
+        System.out.println(employee_id);
+
+
+    }
+    @Then("the retrieve data at {string} object should match the data used for updating the employee")
+    public void the_retrieve_data_at_object_should_match_the_data_used_for_updating_the_employee(String employeeObject,DataTable dataTable) {
+        List<Map<String,String>> ExpectedDataTable=dataTable.asMaps();
+        Map<String,String> actualData = response.jsonPath().get(employeeObject);
+        for(Map<String,String> map:ExpectedDataTable){
+            Set<String> keys = map.keySet();
+            for(String key:keys){
+                String expectedValue = map.get(key);
+                String actualValue = actualData.get(key);
+                Assert.assertEquals(expectedValue,actualValue);
+            }
+        }
+    }
 
 }

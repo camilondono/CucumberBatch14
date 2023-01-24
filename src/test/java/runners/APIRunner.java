@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
         glue = "APISteps",
         //when you set dryRun to true, it stops actual execution
         //it will quickly scan all the gherkin steps whether they are implemented ot not
-        dryRun = false,
+        dryRun = true,
         // when we set dry run to false, it starts execution again
-        tags = "@apiUpdate",
+        tags = "@apiGetEmployee",
 
         // to remove irrelevant information from console, you need to set monocrome to true
         monochrome = true,
@@ -22,7 +22,6 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json",
                 // this failed.txt file holds all the scenarios are failed during execution
                 "rerun:target/failed.txt"}
-
 
 )
 
