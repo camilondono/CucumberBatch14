@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2439679900,
+              "duration": 1897504200,
               "status": "passed"
             },
             "line": 5,
@@ -24,93 +24,63 @@
         ]
       },
       {
-        "start_timestamp": "2023-01-22T15:52:12.494Z",
-        "line": 34,
-        "name": "API test case for creating the employee using highly dynamic body",
+        "start_timestamp": "2023-01-24T06:24:27.273Z",
+        "line": 42,
+        "name": "API test case for updating an employee json body",
         "description": "",
-        "id": "api-workflow-test;api-test-case-for-creating-the-employee-using-highly-dynamic-body",
+        "id": "api-workflow-test;api-test-case-for-updating-an-employee-json-body",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 6002600,
+              "duration": 9994600,
               "status": "passed"
             },
-            "line": 35,
-            "name": "a request is prepared for creating an employee with dynamic data \"Camilo\" , \"Londono\"  , \"E\" , \"M\" , \"2023-01-14\" , \"confirmed\" , \"QA\"",
+            "line": 43,
+            "name": "a request is prepared for updating an employee by passing json body",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Camilo\"",
-                  "offset": 65
-                },
-                {
-                  "val": "\"Londono\"",
-                  "offset": 76
-                },
-                {
-                  "val": "\"E\"",
-                  "offset": 89
-                },
-                {
-                  "val": "\"M\"",
-                  "offset": 95
-                },
-                {
-                  "val": "\"2023-01-14\"",
-                  "offset": 101
-                },
-                {
-                  "val": "\"confirmed\"",
-                  "offset": 116
-                },
-                {
-                  "val": "\"QA\"",
-                  "offset": 130
-                }
-              ],
-              "location": "APISteps.APIWorkFlowSteps.a_request_is_prepared_for_creating_an_employee_with_dynamic_data(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+              "location": "APISteps.APIWorkFlowSteps.a_request_is_prepared_for_updating_an_employee_by_passing_json_body()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 466636200,
+              "duration": 164763200,
               "status": "passed"
             },
-            "line": 36,
-            "name": "a POST call is made to create an employee",
+            "line": 44,
+            "name": "a PUT call is made to update an employee",
             "match": {
-              "location": "APISteps.APIWorkFlowSteps.a_post_call_is_made_to_create_an_employee()"
+              "location": "APISteps.APIWorkFlowSteps.a_put_call_is_made_to_update_an_employee()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 28000400,
-              "status": "passed"
+              "error_message": "java.lang.AssertionError: 1 expectation failed.\nExpected status code \u003c200\u003e but was \u003c400\u003e.\n\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:499)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:684)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:127)\r\n\tat io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)\r\n\tat io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)\r\n\tat io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)\r\n\tat io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)\r\n\tat io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)\r\n\tat APISteps.APIWorkFlowSteps.the_status_code_for_this_emp_is(APIWorkFlowSteps.java:74)\r\n\tat ✽.the status code for this emp is 200(file:///C:/Users/Camilo%20E%20Londono/IdeaProjects/CucumberBatch14/src/test/resources/features/APIWorkflow.feature:45)\r\n",
+              "duration": 39490900,
+              "status": "failed"
             },
-            "line": 37,
-            "name": "the status code for creating an employee is 201",
+            "line": 45,
+            "name": "the status code for this emp is 200",
             "match": {
               "arguments": [
                 {
-                  "val": "201",
-                  "offset": 44
+                  "val": "200",
+                  "offset": 32
                 }
               ],
-              "location": "APISteps.APIWorkFlowSteps.the_status_code_for_creating_an_employee_is(java.lang.Integer)"
+              "location": "APISteps.APIWorkFlowSteps.the_status_code_for_this_emp_is(java.lang.Integer)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 42512900,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 38,
-            "name": "the response body contains key \"Message\" and value \"Employee Created\"",
+            "line": 46,
+            "name": "the response body contains key \"Message\" and value \"Employee Updated\"",
             "match": {
               "arguments": [
                 {
@@ -118,36 +88,18 @@
                   "offset": 31
                 },
                 {
-                  "val": "\"Employee Created\"",
+                  "val": "\"Employee Updated\"",
                   "offset": 51
                 }
               ],
               "location": "APISteps.APIWorkFlowSteps.the_response_body_contains_key_and_value(java.lang.String,java.lang.String)"
             },
             "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 13999100,
-              "status": "passed"
-            },
-            "line": 39,
-            "name": "the employee id \"Employee.employee_id\" is stored as global to be used for other request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Employee.employee_id\"",
-                  "offset": 16
-                }
-              ],
-              "location": "APISteps.APIWorkFlowSteps.the_employee_id_is_stored_as_global_to_be_used_for_other_request(java.lang.String)"
-            },
-            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@apidynamic"
+            "name": "@apiUpdate"
           }
         ]
       }

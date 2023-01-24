@@ -38,5 +38,26 @@ Feature: API workflow test
     And the response body contains key "Message" and value "Employee Created"
     And the employee id "Employee.employee_id" is stored as global to be used for other request
 
+  @apiUpdate
+  Scenario: API test case for updating an employee json body
+    Given a request is prepared for updating an employee by passing json body
+    When a PUT call is made to update an employee
+    Then the status code for this emp is 200
+    And the response body contains key "Message" and value "Employee Updated"
+
+  @apiGetUpdate
+  Scenario: API test case for getting the updated employee
+    Given a request is prepared for getting an updated employee
+    When a Get call is made to update an employee
+    Then the status code for this emp is 200
+    And the employee id "employee.employee_id" should match with global emp id
+    And the retrieved data at "employee" object should match with the data used for updating the employee
+      |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
+      |Camilo       |Londono     |E              |Male      |2023-01-14  |confirmed |QA           |
+
+
+
+
+
 
 
